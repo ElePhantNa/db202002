@@ -1,0 +1,80 @@
+create table customer (
+    ID varchar(20) not null,
+    password varchar(20) not null,
+    name varchar(10),
+    phone varchar(15),
+    address varchar(25),
+    primary key(ID));
+
+
+create table restaurant(
+    name varchar(20) not null,
+    address varchar(25),
+    phone varchar(15),
+    primary key (name));
+
+
+create table delivery(
+    ID varchar(20) not null,
+    name varchar(10) not null,
+    phone varchar(15),
+    company varchar(25),
+    primary key(ID));
+
+
+create table demand(
+    number int not null,
+    menu varchar(15),
+    date date,
+    deliverytime time,
+    primary key(number));
+
+create table evaluation(
+    reviewnum int not null,
+    points int not null,
+    review varchar(200) ,
+    date date,
+    primary key (reviewnum));
+
+
+create table event(
+    franchise varchar(20),
+    eventname varchar(20) not null,
+    period varchar(20),
+    primary key(eventname));
+
+
+create table discount(
+    rate int,
+    menu varchar(15),
+    price int,
+    realprice int);
+
+
+insert into evaluation values(
+    3,2,'음식은 맛있는데 양이 낭낭하지 못해요 ㅜㅜ','2020-11-05');
+
+
+insert into discount values(50,'뿌링클치킨',18000,9000);
+delete from discount where menu='새우버거';
+
+
+insert into demand values(111251,'몬테치킨','2020-12-12',30);
+insert into demand values(15315,'김치볶음밥','2020-12-13',20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
